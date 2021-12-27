@@ -15,7 +15,7 @@ const WeatherDetails = () => {
   const url = `/api/${latitude}/${longitude}`;
 
   useEffect(() => {
-    if (!dataLoading) {
+    if (!dataLoading && !dataError) {
       setLoading(true);
       const fetchDayData = async () => {
         try {
