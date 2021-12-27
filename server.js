@@ -6,13 +6,7 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// app.use(express.static(path.join(__dirname, "client/build")));
-
-app.use("/", express.static(path.join(__dirname, "/client/build")));
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-});
+app.use(express.static("client/build"));
 
 app.get("/api/:query", async (req, res) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?${req.params.query}&units=metric&appid=${process.env.API_KEY}`;
@@ -36,6 +30,10 @@ app.get("/api/:latitude/:longitude", async (req, res) => {
   } catch (err) {
     res.json(err);
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
