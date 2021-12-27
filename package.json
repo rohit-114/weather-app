@@ -9,12 +9,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "clientinstall": "npm install --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client" 
-    },
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
   "dependencies": {
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
