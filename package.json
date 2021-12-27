@@ -8,8 +8,8 @@
     "node": "v14.15.3"
   },
   "scripts": {
-    "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
