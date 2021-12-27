@@ -1,0 +1,32 @@
+.spinner {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: var(--primary-color);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.spinner > div {
+  border: 5px var(--primary-color) solid;
+  width: 54px;
+  height: 54px;
+  border-left: 5px var(--primary-font-color) solid;
+  border-top: 5px var(--primary-font-color) solid;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+.spinner > p {
+  font-size: 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

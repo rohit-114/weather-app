@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Raleway", sans-serif;
+  --primary-font-color: rgba(231, 231, 235, 1);
+  --primary-color: rgba(30, 33, 58, 1);
+}
+
+body {
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--primary-font-color);
+  margin: 0;
+}
+
+@media (min-width: 900px) {
+  #root {
+    display: grid;
+    grid-template-columns: 32vw auto;
+  }
+}

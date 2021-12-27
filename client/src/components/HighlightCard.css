@@ -1,0 +1,86 @@
+.progressbar {
+  background: rgba(231, 231, 235, 1);
+  border-radius: 80px;
+  width: 229px;
+  height: 8px;
+}
+
+.progressbar > div {
+  background: rgba(255, 236, 101, 1);
+  height: 8px;
+  border-radius: 80px;
+}
+
+.progressbar-text {
+  display: flex;
+  justify-content: space-between;
+  width: 229px;
+  font-size: 0.7rem;
+}
+
+.progressbar-text p {
+  margin: 6px 0;
+}
+
+.highlight__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--primary-color);
+  padding: 24px 8px;
+}
+
+.highlight__card__title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.highlight__card__text {
+  margin: 24px 0;
+  font-size: 1.8rem;
+}
+
+.highlight__card__text--bold {
+  font-size: 3.7rem;
+  font-weight: 700;
+}
+
+.highlight__card__icon {
+  display: flex;
+  align-items: center;
+}
+
+.highlight__card__icon > p {
+  font-size: 0.8rem;
+  margin: 0 0 0 5px;
+}
+
+.highlight__card__icon--round {
+  background: #6e707a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #e7e7eb;
+  border-radius: 16px;
+  margin: 4px;
+  padding: 4px;
+  font-size: 14px;
+}
+
+@media (min-width: 900px) {
+  .highlight__card {
+    padding: 16px 8px;
+  }
+
+  .highlight__card__title {
+    font-size: 0.9rem;
+  }
+
+  .highlight__card__text {
+    margin: 16px 0;
+    font-size: 1.5rem;
+  }
+
+  .highlight__card__text--bold {
+    font-size: 3.4rem;
+  }
+}
