@@ -1,21 +1,19 @@
-import fetch from "node-fetch";
-import express from "express";
-import dotenv from "dotenv";
-import * as path from "path";
+const express = require("express");
+const dotenv = require("dotenv");
+const axios = require("axios");
+const path = require("path");
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
-const __dirname = path.resolve();
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.get("/api/:query", async (req, res) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?${req.params.query}&units=metric&appid=${process.env.API_KEY}`;
 
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    res.json(data);
+    const response = await axios.get(url);
+    res.json(response.data);
   } catch (err) {
     res.json(err);
   }
@@ -27,16 +25,15 @@ app.get("/api/:latitude/:longitude", async (req, res) => {
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=${process.env.API_KEY}`;
 
   try {
-    const response = await fetch(url);
-    const data = await response.json();
-    res.json(data);
+    const response = await axios.get(url);
+    res.json(response.data);
   } catch (err) {
     res.json(err);
   }
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
