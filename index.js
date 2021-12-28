@@ -31,7 +31,7 @@ app.get("/api/:query", async (req, res) => {
   }
 });
 
-app.get("/api/:latitude/:longitude", async (req, res) => {
+app.get("/api/query/:latitude/:longitude", async (req, res) => {
   const latitude = req.params.latitude;
   const longitude = req.params.longitude;
   const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&units=metric&appid=${process.env.API_KEY}`;
