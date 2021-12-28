@@ -12,10 +12,6 @@ app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
-
-  // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-  // });
 }
 
 app.get("/api/:query", async (req, res) => {
@@ -23,10 +19,9 @@ app.get("/api/:query", async (req, res) => {
 
   try {
     const response = await axios.get(url);
-    console.log("I'm data", response.data);
     res.json(response.data);
   } catch (err) {
-    console.log("I'm error", err);
+    console.log(err);
     res.json(err);
   }
 });
@@ -38,10 +33,9 @@ app.get("/api/:latitude/:longitude", async (req, res) => {
 
   try {
     const response = await axios.get(url);
-    console.log("I'm coord data", response.data);
     res.json(response.data);
   } catch (err) {
-    console.log("I'm coord error", err);
+    console.log(err);
     res.json(err);
   }
 });
