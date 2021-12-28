@@ -25,14 +25,14 @@ const CurrentForecast = () => {
     getImgUrl,
   } = useContext(DataContext);
   const { date, location, currentTemp, condition } = data;
-  const url = `https://boiling-castle-67859.herokuapp.com/api/${locationQuery}`;
+  const url = `/api/${locationQuery}`;
 
   useEffect(() => {
     if (!locationLoading) {
       setDataLoading(true);
       const fetchQuery = async () => {
         try {
-          console.log("api call");
+          console.log("api call", url);
           const res = await fetch(url);
           console.log(res);
           const data = await res.json();
