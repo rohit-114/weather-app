@@ -12,7 +12,7 @@ const WeatherDetails = () => {
   const [dailyData, setDailyData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = `/api/${latitude}/${longitude}`;
+  const url = ` https://boiling-castle-67859.herokuapp.com/api/${latitude}/${longitude}`;
 
   useEffect(() => {
     if (!dataLoading) {
