@@ -19,8 +19,10 @@ app.get("/api/:query", async (req, res) => {
 
   try {
     const response = await axios.get(url);
+    console.log("I'm data", response.data);
     res.json(response.data);
   } catch (err) {
+    console.log("I'm error", err);
     res.json(err);
   }
 });
@@ -32,8 +34,10 @@ app.get("/api/:latitude/:longitude", async (req, res) => {
 
   try {
     const response = await axios.get(url);
+    console.log("I'm coord data", response.data);
     res.json(response.data);
   } catch (err) {
+    console.log("I'm coord error", err);
     res.json(err);
   }
 });
