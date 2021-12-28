@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "heroku-postbuild": "node index.js && cd client && npm install && npm run build"
+    "heroku-postbuild": "npm start && cd client && npm install && npm run build"
   },
   "dependencies": {
     "axios": "^0.24.0",
