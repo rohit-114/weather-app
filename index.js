@@ -2,9 +2,13 @@ const express = require("express");
 const dotenv = require("dotenv");
 const axios = require("axios");
 const path = require("path");
+const cors = require("cors");
 dotenv.config();
 const app = express();
+
 const port = process.env.PORT || 5000;
+
+app.use(cors());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));

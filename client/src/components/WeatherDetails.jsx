@@ -12,7 +12,7 @@ const WeatherDetails = () => {
   const [dailyData, setDailyData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = ` https://boiling-castle-67859.herokuapp.com/api/${latitude}/${longitude}`;
+  const url = `https://boiling-castle-67859.herokuapp.com/api/${latitude}/${longitude}`;
 
   useEffect(() => {
     if (!dataLoading) {
@@ -24,6 +24,7 @@ const WeatherDetails = () => {
           setDailyData(data.daily.slice(1, 6));
           setLoading(false);
         } catch (err) {
+          console.log(err);
           setDataError(true);
         }
       };
