@@ -34,6 +34,7 @@ const CurrentForecast = () => {
         try {
           console.log("api call");
           const res = await fetch(url);
+          console.log(res);
           const data = await res.json();
           setData({
             latitude: data.coord.lat,
