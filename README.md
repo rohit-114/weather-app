@@ -65,5 +65,5 @@ $ npm start
 
 ## Contact
 
-- LinkedIn (kedin.com/in/rohit-shinde-947011191/)
+- LinkedIn [@Rohit Shinde](linkedin.com/in/rohit-shinde-947011191/)
 - GitHub [@rohit-114](https://github.com/rohit-114)
