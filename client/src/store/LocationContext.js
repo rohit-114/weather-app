@@ -20,7 +20,6 @@ export const LocationContextProvider = (props) => {
       },
       function (error) {
         setLocationError(true);
-        // setLocationLoading(false);
       }
     );
   }, [count]);
