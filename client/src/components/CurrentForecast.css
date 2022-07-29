@@ -52,13 +52,13 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 48px;
+  margin-top: 28px;
   color: rgba(160, 159, 177, 1);
 }
 
 .status__img {
   width: 40%;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .status__title {
