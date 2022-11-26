@@ -12,7 +12,7 @@ const WeatherDetails = () => {
   const [dailyData, setDailyData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const url = `/api/${latitude}/${longitude}`;
+  const url = `https://backend-weatherapp.vercel.app/api/${latitude}/${longitude}`;
 
   useEffect(() => {
     if (!dataLoading) {

@@ -25,7 +25,7 @@ const CurrentForecast = () => {
     getImgUrl,
   } = useContext(DataContext);
   const { date, location, currentTemp, condition } = data;
-  const url = `/api/${locationQuery}`;
+  const url = `https://backend-weatherapp.vercel.app/api/${locationQuery}`;
 
   useEffect(() => {
     if (!locationLoading) {
