@@ -14,6 +14,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
 }
 
+app.get("/", async (req, res) => {
+  res.send("Hello from weather backend");
+});
+
 app.get("/api/:query", async (req, res) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?${req.params.query}&units=metric&appid=${process.env.API_KEY}`;
 
