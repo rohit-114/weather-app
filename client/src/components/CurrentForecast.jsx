@@ -100,6 +100,13 @@ const CurrentForecast = () => {
                 </div>
 
                 <div className="status">
+                  {console.log(
+                    "img",
+                    require(`../images/${getImgUrl(
+                      condition.main,
+                      condition.description
+                    )}.png`).default
+                  )}
                   <img
                     src={
                       require(`../images/${getImgUrl(

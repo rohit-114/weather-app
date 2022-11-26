@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 const LocationContext = createContext();
 
@@ -12,13 +12,13 @@ export const LocationContextProvider = (props) => {
   useEffect(() => {
     setLocationLoading(true);
     navigator.geolocation.getCurrentPosition(
-      function (position) {
+      function(position) {
         setLocationQuery(
           `lat=${position.coords.latitude}&lon=${position.coords.longitude}`
         );
         setLocationLoading(false);
       },
-      function (error) {
+      function(error) {
         setLocationError(true);
       }
     );
